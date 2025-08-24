@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ADHD Self‑Assessment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="A brief ADHD self-assessment screening tool. Not a diagnosis.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <!-- Optional logo -->
+      <div class="logo" aria-hidden="true"></div>
+      <span class="brand-name">FocusCheck</span>
+    </div>
+    <nav class="nav">
+      <a href="#quiz" class="nav-link">Take the Test</a>
+      <a href="#about" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>ADHD Self‑Assessment</h1>
+      <p class="sub">A quick, private screening to reflect on attention and hyperactivity symptoms. Not a diagnosis.</p>
+      <a href="#quiz" class="btn btn-primary">Start Assessment</a>
+    </section>
+
+    <section id="quiz" class="card">
+      <h2>Self‑Assessment</h2>
+      <p class="muted small">Over the last 6 months, how often have you experienced the following? This is a screening tool and does not replace a professional evaluation.</p>
+
+      <form id="adhdForm">
+        <!-- Questions (short selection inspired by common ADHD screener themes).
+             Note: This is not ASRS verbatim; it’s a general-purpose screening set. -->
+        <ol class="q-list">
+          <li class="q">
+            <label class="q-label">How often do you have difficulty sustaining attention in tasks or activities (e.g., reading, work)?</label>
+            <div class="choices">
+              <select required name="q1" aria-label="Sustaining attention">
+                <option value="">Select</option>
+                <option value="0">Never</option>
+                <option value="1">Rarely</option>
+                <option value="2">Sometimes</option>
+                <option value="3">Often</option>
+                <option value="4">Very often</option>
+              </select>
+            </div>
+          </li>
+
+          <li class="q">
+            <label class="q-label">How often do you struggle to organize tasks or manage time?</label>
+            <div class="choices">
+              <select required name="q2" aria-label="Organization and time">
+                <option value="">Select</option>
+                <option value="0">Never</option>
+                <option value="1">Rarely</option>
+                <option value="2">Sometimes</option>
+                <option value="3">Often</option>
+                <option value="4">Very often</option>
+              </select>
+            </div>
+          </li>
+
+          <li class="q">
+            <label class="q-label">How often are you easily distracted by external stimuli or unrelated thoughts?</label>
+            <div class="choices">
+              <select required name="q3" aria-label="Distractibility">
+                <option value="">Select</option>
+                <option value="0">Never</option>
+                <option value="1">Rarely</option>
+                <option value="2">Sometimes</option>
+                <option value="3">Often</option>
+                <option value="4">Very often</option>
+              </select>
+            </div>
+          </li>
+
+          <li class="q">
+            <label class="q-label">How often do you lose or forget things needed for tasks (keys, phone, papers)?</label>
+            <div class="choices">
+              <select required name="q4" aria-label="Losing things">
+                <option value="">Select</option>
+                <option value="0">Never</option>
+                <option value="1">Rarely</option>
+                <option value="2">Sometimes</option>
+                <option value="3">Often</option>
+                <option value="4">Very often</option>
+              </select>
+            </div>
+          </li>
+
+          <li class="q">
+            <label class="q-label">How often do you feel restless or find it hard to sit still?</label>
+            <div class="choices">
+              <select required name="q5" aria-label="Restlessness">
+                <option value="">Select</option>
+                <option value="0">Never</option>
+                <option value="1">Rarely</option>
+                <option value="2">Sometimes</option>
+                <option value="3">Often</option>
+                <option value="4">Very often</option>
+              </select>
+            </div>
+          </li>
+
+          <li class="q">
+            <label class="q-label">How often do you act impulsively (speaking out, interrupting, impulsive decisions)?</label>
+            <div class="choices">
+              <select required name="q6" aria-label="Impulsivity">
+                <option value="">Select</option>
+                <option value="0">Never</option>
+                <option value="1">Rarely</option>
+                <option value="2">Sometimes</option>
+                <option value="3">Often</option>
+                <option value="4">Very often</option>
+              </select>
+            </div>
+          </li>
+        </ol>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">See Results</button>
+          <button type="reset" class="btn btn-ghost">Reset</button>
+        </div>
+      </form>
+
+      <div id="results" class="results hidden" aria-live="polite"></div>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About this assessment</h2>
+      <p>This brief self‑assessment is for informational purposes only. A high score suggests symptoms that may be consistent with ADHD, but only a qualified clinician can provide a diagnosis.</p>
+      <p class="muted small">If concerned, consider contacting local healthcare services in Sweden (Vårdcentralen) or speaking with a licensed mental health professional.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="muted small">© <span id="year"></span> FocusCheck • This site does not store personal data. Results are computed locally in the browser.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
